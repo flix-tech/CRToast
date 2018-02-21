@@ -207,7 +207,7 @@ static CGRect CRGetNotificationContainerFrame(UIInterfaceOrientation statusBarOr
 static UIView *CRStatusBarSnapShotView(BOOL underStatusBar) {
 	if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
 		return underStatusBar ?
-		[[UIApplication sharedApplication].keyWindow.rootViewController.view snapshotViewAfterScreenUpdates:YES] :
+		[[UIApplication sharedApplication].keyWindow snapshotViewAfterScreenUpdates:YES] :
 		[[UIScreen mainScreen] snapshotViewAfterScreenUpdates:YES];
 	} else {
 		return underStatusBar ?
